@@ -1,0 +1,19 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+aiogram = "*"
+environs = "~=8.0.0"
+source = "*"
+documents = "*"
+state = "*"
+gspread = "*"
+oauth2client = "*"
+pyrogram = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"
