@@ -1,1 +1,1 @@
-# Ingliz-bot
+# bot-uchun
