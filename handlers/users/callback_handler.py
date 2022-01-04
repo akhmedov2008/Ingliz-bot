@@ -14,7 +14,8 @@ async def tasdiqladi(call:CallbackQuery,state:FSMContext):
     result_text="✅ Arizangiz muvaffaqqiyatli yuborildi!\n🕓 Tez orada operator siz bilan bog'lanadi!\n\n🔹 Siz o'z safimizda ko'rishdan hursandmiz, Keling, Kelajakni birga quramiz!"
     await call.message.answer(result_text,reply_markup=asosiy_menu)
     await state.set_state(KeyboardState.menu)
-    await bot.send_message(ADMINS[0],text=f"{kurslar_yozilish_javoblari[str(call.message.chat['id'])]}")
+    for i in ADMINS:
+        await bot.send_message(i,text=f"{kurslar_yozilish_javoblari[str(call.message.chat['id'])]}")
     kurslar_yozilish_javoblari.pop(str(call.message.chat.id))
 @dp.callback_query_handler(text="yozilish_bekorqilish",state=[i.replace(' ','_') for i in kurslar_yozilish_javoblari.keys()])
 async def delete_tasdiqlash(call:CallbackQuery,state:FSMContext):
