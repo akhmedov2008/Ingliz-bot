@@ -1,6 +1,6 @@
 from aiogram import types
 from aiogram.dispatcher.filters.builtin import CommandHelp
-
+import asyncio
 from loader import dp
 
 
@@ -11,3 +11,5 @@ async def bot_help(message: types.Message):
             "/help - Yordam")
     
     await message.answer("\n".join(text))
+    await message.delete()
+    await asyncio.sleep(0.5)
